@@ -30,8 +30,7 @@ def get_animal_by_id_short(animal_id):
 def get_animal_by_id_full(animal_id):
     conn: sqlite3.Connection = app.config['db']
     cursor = conn.cursor()
-
-    cursor.execute(queries.GET_ANIMAL_BY_ID_FULL_QUERY, (animal_id,))
+    cursor.execute(queries.GET_ANIMAL_BY_ID_FULL_QUERY, (animal_id, ))
     row = cursor.fetchone()
 
     cursor.close()

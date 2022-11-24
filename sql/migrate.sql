@@ -40,7 +40,7 @@ SELECT
     animal_type.id as type_id,
     animal_breed.id as breed_id,
     animal_color1.id as color1_id,
-    animal_color1.id as color2_id,
+    animal_color2.id as color2_id,
     outcome_subtype.id as outcome_subtype_id,
     outcome_type.id as outcome_type_id
 FROM animals

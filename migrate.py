@@ -4,10 +4,11 @@ from os.path import join, isfile
 DATABASE_PATH = 'animal.db'
 SQL_DIR_PATH = 'sql'
 INIT_MIGRATION_FILE_PATH = 'init.sql'
-DATE_MIGRATION_FILE_PATH = 'migrate.sql'
+DATA_MIGRATION_FILE_PATH = 'migrate.sql'
 
 
 def get_sql_from_file(file_name):
+
     content = ''
     if isfile(file_name):
         with open(file_name) as file:
@@ -22,7 +23,7 @@ def main():
     init_sql = get_sql_from_file(join(SQL_DIR_PATH, INIT_MIGRATION_FILE_PATH))
     cursor.executescript(init_sql)
 
-    data_sql = get_sql_from_file(join(SQL_DIR_PATH, DATE_MIGRATION_FILE_PATH))
+    data_sql = get_sql_from_file(join(SQL_DIR_PATH, DATA_MIGRATION_FILE_PATH))
     cursor.executescript(data_sql)
 
     cursor.close()
